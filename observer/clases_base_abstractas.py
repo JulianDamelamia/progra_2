@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Subject(ABC):
     @abstractmethod
     def register_observer(self, observer):
@@ -13,10 +14,12 @@ class Subject(ABC):
     def notify_observers(self):
         pass
 
+
 class Observer(ABC):
     @abstractmethod
     def update(self):
         pass
+
 
 class DisplayElement(ABC):
     @abstractmethod
