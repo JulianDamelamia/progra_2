@@ -40,6 +40,7 @@ class Beverage(ABC):
         """
         pass
 
+
 # --- Componentes Concretos ---
 class HouseBlend(Beverage):
     """
