@@ -1,29 +1,6 @@
 from beverages import Beverage
 from collections import Counter
 
-class prettyPrintDecorator(Beverage):
-    def __init__(self, beverage: Beverage):
-        self._beverage = beverage
-
-    def get_description(self) -> str:
-        description = self._beverage.get_description()
-        # Reemplazar "Mocha" por "Double Mocha" si aparece dos veces
-        if description.count("Mocha") == 2:
-            description = description.replace("Mocha, Mocha", "Double Mocha")
-        
-        return description
-
-    def cost(self) -> float:
-        return self._beverage.cost()
-
-    def set_size(self, size: str):
-        self._beverage.set_size(size)
-
-    def get_size(self) -> str:
-        return self._beverage.get_size()
-    
-
-###################################
 class PrettyPrintDecorator(Beverage):
     def __init__(self, beverage: Beverage):
         self._beverage = beverage
