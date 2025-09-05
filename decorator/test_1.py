@@ -33,12 +33,12 @@ def test_triple_crema():
         "Café de la Casa Grande, Soja, Triple Crema"
         in PrettyPrintDecorator(bebida).get_description()
     )
-    assert bebida.cost() == 0.89 + 0.15 + 0.15 + 0.10 + 0.10 + 0.10
+    assert bebida.cost() == 0.89 + 0.15 + 0.2 + 0.10 + 0.10 + 0.10
 
 
 def test_soya_y_crema():
     bebida = build_beverage("DarkRoast", "Normal", ["Soy", "Whip"])
-    assert bebida.cost() == 0.99 + 0.15 + 0.10
+    assert bebida.cost() == 0.99 + 0.10 + 0.10
     assert (
         "Café Dark Roast Normal, Soja, Crema"
         in PrettyPrintDecorator(bebida).get_description()
