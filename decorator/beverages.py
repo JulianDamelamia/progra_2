@@ -3,14 +3,17 @@
 
 from abc import ABC, abstractmethod
 
+
 # --- Componente Abstracto ---
 class Beverage(ABC):
     """
     La clase base para todas las bebidas. Utiliza el módulo abc para
     definir que es una clase abstracta.
     """
+
     def __init__(self):
         self.description = "Bebida Desconocida"
+        self.size = "Normal"
 
     def get_description(self) -> str:
         """
@@ -26,19 +29,22 @@ class Beverage(ABC):
         """
         pass
 
-    @abstractmethod
     def set_size(self, size: str):
         """
-        Método abstracto para establecer el tamaño de la bebida.
+        Método para establecer el tamaño de la bebida.
         """
-        pass
+        if size not in ["Tall", "Grande", "Venti", "Normal"]:
+            raise ValueError(
+                "Tamaño inválido. Usar 'Tall', 'Grande', 'Venti' o 'Normal'."
+            )
 
-    @abstractmethod
+        self.size = size
+
     def get_size(self) -> str:
         """
-        Método abstracto para obtener el tamaño de la bebida.
+        Método para obtener el tamaño de la bebida.
         """
-        pass
+        return self.size
 
 
 # --- Componentes Concretos ---
@@ -46,10 +52,11 @@ class HouseBlend(Beverage):
     """
     Café de la casa, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.size = "Normal"  # Tamaño por defecto
         self.description = "Café de la Casa"
-        
+
     def cost(self) -> float:
         tamaño = self.get_size()
         if tamaño == "Normal":
@@ -61,17 +68,13 @@ class HouseBlend(Beverage):
         else:
             extra = 0.20
         return 0.89 + extra
-    
-    def set_size(self, size: str):
-        self.size = size
 
-    def get_size(self) -> str:
-        return self.size
 
 class DarkRoast(Beverage):
     """
     Café Dark Roast, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.size = "Normal"  # Tamaño por defecto
         self.description = "Café Dark Roast"
@@ -87,17 +90,13 @@ class DarkRoast(Beverage):
         else:
             extra = 0.20
         return 0.99 + extra
-    
-    def set_size(self, size: str):
-        self.size = size
 
-    def get_size(self) -> str:
-        return self.size
 
 class Decaf(Beverage):
     """
     Café Descafeinado, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.size = "Normal"  # Tamaño por defecto
         self.description = "Café Descafeinado"
@@ -106,24 +105,20 @@ class Decaf(Beverage):
         tamaño = self.get_size()
         if tamaño == "Normal":
             extra = 0.0
-        elif tamaño == "Tall":  
+        elif tamaño == "Tall":
             extra = 0.10
         elif tamaño == "Grande":
             extra = 0.15
         else:
             extra = 0.20
         return 1.05 + extra
-    
-    def set_size(self, size: str):
-        self.size = size
 
-    def get_size(self) -> str:
-        return self.size
 
 class Espresso(Beverage):
     """
     Café Espresso, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.size = "Normal"
         self.description = "Espresso"
@@ -132,16 +127,10 @@ class Espresso(Beverage):
         tamaño = self.get_size()
         if tamaño == "Normal":
             extra = 0.0
-        elif tamaño == "Tall":  
+        elif tamaño == "Tall":
             extra = 0.10
         elif tamaño == "Grande":
             extra = 0.15
         else:
             extra = 0.20
         return 1.99 + extra
-
-    def set_size(self, size: str):
-        self.size = size
-
-    def get_size(self) -> str:
-        return self.size
