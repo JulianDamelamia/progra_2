@@ -55,7 +55,7 @@ def test_bebida_invalida():
 
 def test_tamaño_invalido():
     try:
-        HouseBlend("SuperDuperGigante")
+        build_beverage("HouseBlend", "SuperDuperGrande", [])
         assert False, "Deberia lanzar ValueError para tamaño desconocido"
     except ValueError:
         pass
