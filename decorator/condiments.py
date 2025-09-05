@@ -63,13 +63,13 @@ class Soy(CondimentDecorator):
     def cost(self) -> float:
         size = self.get_size()
         if size == "Normal":
-            extra = 0.10
+            extra = 0.15
         elif size == "Tall":
-            extra = 0.15
+            extra = 0.25
         elif size == "Grande":
-            extra = 0.20
+            extra = 0.30
         elif size == "Venti":
-            extra = 0.15
+            extra = 0.35
         else:
             raise ValueError("Tamaño inválido de bebida.")
 

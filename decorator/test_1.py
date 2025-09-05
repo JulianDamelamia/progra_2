@@ -21,7 +21,7 @@ def test_double_mocha():
 
 def test_soya_venti():
     bebida = build_beverage("HouseBlend", "Venti", ["Soy"])
-    assert bebida.cost() == 0.89 + 0.20 + 0.15
+    assert bebida.cost() == 0.89 + 0.20 + 0.35
     assert (
         "Café de la Casa Venti, Soja" in PrettyPrintDecorator(bebida).get_description()
     )
@@ -33,12 +33,12 @@ def test_triple_crema():
         "Café de la Casa Grande, Soja, Triple Crema"
         in PrettyPrintDecorator(bebida).get_description()
     )
-    assert bebida.cost() == 0.89 + 0.15 + 0.2 + 0.10 + 0.10 + 0.10
+    assert bebida.cost() == 0.89 + 0.15 + 0.30 + 0.10 + 0.10 + 0.10
 
 
 def test_soya_y_crema():
     bebida = build_beverage("DarkRoast", "Normal", ["Soy", "Whip"])
-    assert bebida.cost() == 0.99 + 0.10 + 0.10
+    assert bebida.cost() == 0.99 + 0.15 + 0.10
     assert (
         "Café Dark Roast Normal, Soja, Crema"
         in PrettyPrintDecorator(bebida).get_description()
