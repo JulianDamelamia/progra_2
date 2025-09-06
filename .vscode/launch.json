@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug módulo actual",
+            "type": "python",
+            "request": "launch",
+            "module": "factory.simple_factory.main", // <- valor fijo para probar primero
+            "justMyCode": true,
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ]
+}

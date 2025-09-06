@@ -1,7 +1,7 @@
 import os 
 print(os.getcwd())
-from factory.simple_factory.store import PizzaStore
-from factory.simple_factory.simple_factory import SimplePizzaFactory
+from simple_factory.store import PizzaStore
+from simple_factory.simple_factory import SimplePizzaFactory
 
 def main():
     store = PizzaStore(SimplePizzaFactory())
