@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.insert(0, os.path.dirname(__file__))
+
 from beverages import *
 from condiments import *
 from builder import build_beverage
